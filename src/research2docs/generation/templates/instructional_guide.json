@@ -1,0 +1,11 @@
+{
+  "version": "instructional_guide:1.0",
+  "instruction": "Explain learning objectives, concepts, examples and knowledge checks with a conclusion. Clearly label teaching interpretations. Do not fabricate operational procedures.",
+  "sections": [
+    "objectives",
+    "concepts",
+    "examples",
+    "knowledge_checks",
+    "conclusion"
+  ]
+}

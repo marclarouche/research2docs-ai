@@ -1,0 +1,10 @@
+{
+  "version": "technical_explainer:1.0",
+  "instruction": "Define the concept, explain the mechanism and implications, give source-based examples, and preserve limitations.",
+  "sections": [
+    "concept",
+    "mechanism",
+    "examples",
+    "limitations"
+  ]
+}

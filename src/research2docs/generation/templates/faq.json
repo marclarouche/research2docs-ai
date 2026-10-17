@@ -1,0 +1,9 @@
+{
+  "version": "faq:1.0",
+  "instruction": "Write concise question headings and source-grounded answers. Cover concepts, practical questions and limitations without inventing missing answers.",
+  "sections": [
+    "concepts",
+    "practical_questions",
+    "limitations"
+  ]
+}

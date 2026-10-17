@@ -1,0 +1,11 @@
+{
+  "version": "step_by_step_tutorial:1.0",
+  "instruction": "Explain prerequisites, ordered steps, expected results, troubleshooting and validation. Never invent commands, prerequisites or outcomes. Where absent, explicitly say the procedure needs verification; do not turn guesses into steps.",
+  "sections": [
+    "prerequisites",
+    "steps",
+    "expected_results",
+    "troubleshooting",
+    "validation"
+  ]
+}

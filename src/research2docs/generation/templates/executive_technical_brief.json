@@ -1,0 +1,11 @@
+{
+  "version": "executive_technical_brief:1.0",
+  "instruction": "Summarize findings, operational implications, risks, limitations and possible next steps. Separate recommendations from source statements and never invent business impact or metrics.",
+  "sections": [
+    "findings",
+    "implications",
+    "risks",
+    "limitations",
+    "next_steps"
+  ]
+}

@@ -1,0 +1,4 @@
+Fictional research notes
+
+RESEARCH_READY is a documentation label, not a security certification.
+Retention periods and recovery procedures are intentionally unspecified.
