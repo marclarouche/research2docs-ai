@@ -10,7 +10,7 @@ from research2docs.core.models import EditorialGoals, Record, SourcePassage
 
 
 class GenerationLimits(Record):
-    timeout_seconds: float = Field(default=180.0, ge=1, le=600)
+    timeout_seconds: float = Field(default=600.0, ge=1, le=600)
     context_tokens: int = Field(default=32768, ge=8192, le=65536)
     output_tokens: int = Field(default=4096, ge=512, le=8192)
     max_prompt_bytes: int = Field(default=24000, ge=2000, le=48000)

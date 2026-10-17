@@ -88,7 +88,7 @@ Original `prd.md`, `codex-prompt.md` and `how-2-demo.md` are preserved. The sugg
 
 ## Generation limits
 
-See [generation methodology](docs/GENERATION.md). Default context is 32,768 tokens with up to 4,096 output tokens, eight retrieved passages, a 24,000-byte prompt budget, 256 KiB response cap and 180-second inference deadline. Model metadata must report adequate context. A conservative UTF-8 byte budget reserves output and framing space; this is not the model's tokenizer or a guarantee of semantic coverage. Overlarge, truncated, malformed or invented-citation responses are rejected without saving a draft. Long word-count targets may exceed output limits; actual length differences are warned. There is no automatic repair or background retry.
+See [generation methodology](docs/GENERATION.md). Default context is 32,768 tokens with up to 4,096 output tokens, eight retrieved passages, a 24,000-byte prompt budget, 256 KiB response cap and 600-second inference deadline. Model metadata must report adequate context. A conservative UTF-8 byte budget reserves output and framing space; this is not the model's tokenizer or a guarantee of semantic coverage. Overlarge, truncated, malformed or invented-citation responses are rejected without saving a draft. Long word-count targets may exceed output limits; actual length differences are warned. There is no automatic repair or background retry.
 
 ## Claim assessment boundary
 

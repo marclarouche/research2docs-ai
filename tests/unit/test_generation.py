@@ -70,6 +70,17 @@ def request(kind=DocumentType.EXPLAINER, audience=Audience.INTERMEDIATE, **kwarg
     )
 
 
+def test_short_request_sends_bounded_schema_without_changing_long_drafts(setup):
+    w, p, calls = setup
+    w.generation.generate(p.project_id, request(approximate_words=200))
+    schema = calls[0][1]
+    assert schema["$defs"]["GeneratedSection"]["properties"]["blocks"]["maxItems"] == 1
+    assert schema["$defs"]["GeneratedBlock"]["properties"]["text"]["maxLength"] == 350
+    assert schema["properties"]["limitations"]["maxItems"] == 2
+    long_schema = output_schema(DocumentType.EXPLAINER, 800)
+    assert long_schema["$defs"]["GeneratedSection"]["properties"]["blocks"]["maxItems"] == 10
+
+
 @pytest.mark.parametrize("kind", list(DocumentType))
 def test_every_format_saves_and_reopens_with_real_evidence(setup, kind):
     w, p, calls = setup

@@ -107,7 +107,7 @@ class GenerationService:
         name = self.projects.model_preference()
         if not name:
             raise GenerationError("Choose and save an installed local model in Settings first.")
-        schema = output_schema(request.goals.document_type)
+        schema = output_schema(request.goals.document_type, request.goals.approximate_words)
         evidence: list[EvidenceItem] = []
         for hit in hits:
             candidate = [

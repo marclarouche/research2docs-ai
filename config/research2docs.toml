@@ -22,12 +22,12 @@ cpu_seconds = 10
 memory_bytes = 1073741824
 
 [generation]
-timeout_seconds = 180.0
-context_tokens = 32768
-output_tokens = 4096
+timeout_seconds = 600.0
+context_tokens = 16384
+output_tokens = 2048
 max_prompt_bytes = 24000
 max_response_bytes = 262144
-evidence_passages = 8
+evidence_passages = 3
 
 [verification]
 retrieval_passages = 8

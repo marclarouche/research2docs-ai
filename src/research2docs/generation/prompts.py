@@ -34,11 +34,21 @@ def template(kind: DocumentType) -> dict[str, Any]:
     return result
 
 
-def output_schema(kind: DocumentType) -> dict[str, Any]:
+def output_schema(kind: DocumentType, approximate_words: int | None = None) -> dict[str, Any]:
     schema = GeneratedContent.model_json_schema()
     kinds = template(kind)["sections"]
     schema["$defs"]["GeneratedSection"]["properties"]["kind"]["enum"] = kinds
     schema["properties"]["sections"].update(minItems=len(kinds), maxItems=len(kinds))
+    if approximate_words is not None and approximate_words <= 400:
+        # Short drafts must not expand into ten blocks per section on slow CPUs.
+        section = schema["$defs"]["GeneratedSection"]["properties"]
+        section["blocks"]["maxItems"] = 1
+        section["heading"]["maxLength"] = 80
+        block = schema["$defs"]["GeneratedBlock"]["properties"]
+        block["text"]["maxLength"] = max(200, approximate_words * 7 // len(kinds))
+        block["review_note"]["maxLength"] = 120
+        schema["properties"]["limitations"]["maxItems"] = 2
+        schema["properties"]["limitations"]["items"]["maxLength"] = 200
     return schema
 
 
